@@ -21,35 +21,17 @@ export class ProdutosListaComponent implements OnInit {
   modalRef: BsModalRef;
   message: string;
 
-  itemcompra: any = {
-    valoratual: null,
-    quantidade: null,
-  };
-  material: any = {
-    nome: null,
-  };
-  genero: any = {
-    nome: null,
-  };
-  tamanho: any = {
-    nome: null,
-  };
-  categoria: any = {
-    nome: null,
-  };
-
   produto: any = {
     nome: null,
     quantidade: null, 
     descricao: null,
     valorunitario: null,
-    categoria: this.categoria,
-    tamanho: this.tamanho,
+    categoria: null,
+    tamanho: null,
     volume: null,
-    itemcompra: this.itemcompra,
-    material: this.material,
-    genero: this.genero.nome,
-    //imagem: null,
+    material: null,
+    genero: null,
+    imagem: null,
   };
 
   //[{"id":4,"nome":"Sangue bom","quantidade":100,"descricao":"camisa boa","valorunitario":23,
