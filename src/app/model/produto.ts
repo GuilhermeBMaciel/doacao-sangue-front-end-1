@@ -16,3 +16,4 @@ export interface Produto {
     genero: Genero[],
     urlimagem: string
   }
+

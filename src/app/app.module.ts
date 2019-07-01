@@ -32,13 +32,20 @@ import { Relatorio2Component } from './viewer/relatorio/relatorio2/relatorio2.co
 import { Relatorio3Component } from './viewer/relatorio/relatorio3/relatorio3.component';
 import { Relatorio4Component } from './viewer/relatorio/relatorio4/relatorio4.component';
 import { DemandaFormComponent } from './viewer/admin-hemocentro/demanda-form/demanda-form.component';
-import { ProdutoModule } from './viewer/admin-loja/produto/produto.module';
 import { LoginModule } from './viewer/login/login.module';
 import { AuthService } from './viewer/guards/auth.service';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { CadastroModule } from './viewer/cadastro/cadastro.module';
 import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirmar-service';
-
+import { AdminSistemaComponent } from './viewer/admin-sistema/admin-sistema.component';
+import { ExcluirHemocentroComponent } from './viewer/admin-sistema/hemocentro/excluir-hemocentro/excluir-hemocentro.component';
+import { EditarHemocentroComponent } from './viewer/admin-sistema/hemocentro/editar-hemocentro/editar-hemocentro.component';
+import { ProdutosListaComponent } from './viewer/admin-sistema/produto/cadastrar-produto/cadastrar-produto.component';
+import { ConsultarProdutoComponent } from './viewer/admin-sistema/produto/consultar-produto/consultar-produto.component';
+import { EditarProdutoComponent } from './viewer/admin-sistema/produto/editar-produto/editar-produto.component';
+import { ExcluirProdutoComponent } from './viewer/admin-sistema/produto/excluir-produto/excluir-produto.component';
+import { ConsultarHemocentroComponent } from './viewer/admin-sistema/hemocentro/consultar-hemocentro/consultar-hemocentro.component';
+import { CadastrarHemocentroComponent } from './viewer/admin-sistema/hemocentro/cadastrar-hemocentro/cadastrar-hemocentro.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +67,16 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     ConfirmarDoacaoComponent,
     AjudaPageComponent,
     AdminHemocentroComponent,
-    AdminLojaComponent
+    AdminLojaComponent,
+    AdminSistemaComponent,
+    ExcluirHemocentroComponent,
+    EditarHemocentroComponent,
+    ProdutosListaComponent,
+    ConsultarProdutoComponent,
+    EditarProdutoComponent,
+    ExcluirProdutoComponent,
+    ConsultarHemocentroComponent,
+    CadastrarHemocentroComponent
   ],
   imports: [
     NgbModule,
@@ -71,7 +87,6 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     CadastroModule,
     DadosEntregaFormModule,
     HttpClientModule,
-    ProdutoModule,
     // RelatorioModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,

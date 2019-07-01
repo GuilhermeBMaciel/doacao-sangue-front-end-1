@@ -18,17 +18,19 @@ import { HomeComponent } from './viewer/home/home';
 import { DemandaFormComponent } from './viewer/admin-hemocentro/demanda-form/demanda-form.component';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { LoginComponent } from './viewer/login/login.component';
-import { ProdutosListaComponent } from './viewer/admin-loja/produto/produtos-lista/produtos-lista.component';
+import { ProdutosListaComponent } from './viewer/admin-sistema/produto/cadastrar-produto/cadastrar-produto.component';
 import { CadastroComponent } from './viewer/cadastro/cadastro.component';
+import { AdminSistemaComponent } from './viewer/admin-sistema/admin-sistema.component';
+import { CadastrarHemocentroComponent } from './viewer/admin-sistema/hemocentro/cadastrar-hemocentro/cadastrar-hemocentro.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'esqueciminhasenha', component: EsqueciMinhaSenhaComponent },
   {
-    path: 'produtos',
-    component: ProdutosListaComponent,
-    canActivate: [AuthGuard] //Para guardar essa rota
+    path: 'cadastrar-produto',
+    component: ProdutosListaComponent
+    //,canActivate: [AuthGuard] //Para guardar essa rota
   },
   { path: 'catalogo', component: CatalogoProdutosComponent },
   {
@@ -57,6 +59,8 @@ const routes: Routes = [
   { path: "ajuda", component: AjudaPageComponent },
   { path: "admin-hemo", component: AdminHemocentroComponent },
   { path: "admin-loja", component: AdminLojaComponent },
+  { path: "admin-sistema", component: AdminSistemaComponent },
+  { path: "cadastrar-hemocentro", component: CadastrarHemocentroComponent },
 
   { path: '', component: HomeComponent },
 ];

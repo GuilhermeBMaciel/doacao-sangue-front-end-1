@@ -1,0 +1,109 @@
+<br>
+
+<div class="card">
+
+  <div class="card-header">
+
+    <div class="float-left">
+      <h4>Hemocentros</h4>
+    </div>
+    <div class="float-right">
+      <!--button type="button" class="btn btn-primary" [routerLink]="['novoHemocentro']"-->
+      <button (click)="openModal(template)" style="margin:5px;" type="button" class="btn btn-primary">
+        <!-- Pendente -->
+        Novo Hemocentro
+      </button>
+
+      <!-- Abre um pop-up modal para inserir um novo hemocentro -->
+      <ng-template #template>
+
+        <div class="modal-body text-center">
+          <form #cadastroForm="ngForm">
+            <h4>Dados do Hemocentro</h4>
+            <br>
+            <input type="text" style="margin:2px;"  class="form-control" [ngModel]="hemocentro.nome" name="nome" id="nome" placeholder="Nome do Hemocentro">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="hemocentro.cnes" name="cnes" id="cnes" placeholder="CNES do Hemocentro">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="hemocentro.email"  name="email" id="email" placeholder="Email">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="hemocentro.senha"  name="senha" id="senha" placeholder="Senha">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="hemocentro.telefone" name="telefone" id="telefone" placeholder="Telefone">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="funcionamento.horaAbertura" name="horaAbertura" id="horaAbertura" placeholder="Hora de abertura">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="funcionamento.horaFechamento" name="horaFechamento" id="horaFechamento" placeholder="Hora de fechamento">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="funcionamento.diaFuncionamento" name="diaFuncionamento" id="diaFuncionamento" placeholder="Dia de funcionamento">
+            <input type="text" style="margin:2px; "class="form-control" [ngModel]="endereco.cep" name="cep" id="cep" placeholder="CEP">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="endereco.numero" name="numero" id="numero" placeholder="Número">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="bairro.bairro" name="bairro" id="bairro" placeholder="Bairro">
+            <input type="text" style="margin:2px;" class="form-control" [ngModel]="municipio.municipio" name="municipio" id="municipio" placeholder="Municipio">
+            <!--
+            <div class="form-row ">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+              </div>
+            </div>
+            -->
+          </form>
+          <button type="button" class="btn btn-default" (click)="justHide()">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="enviar(cadastroForm)"  [disabled]="!cadastroForm.valid">Salvar</button>
+        </div>
+
+      </ng-template>
+
+    </div>
+
+  </div>
+
+
+  <!-- Tabela para listar os hemocentros -->
+  <div class="card-body">
+
+    <!--Só vai mostrar produtos caso exista hemocentros-->
+
+    <table id="hemocentros" class="table table-hover" *ngIf="hemocentros$ | async as hemocentros; else loadingError">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Hemocentros</th>
+          <th>Status</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let hemocentro of hemocentros">
+          <td>{{ hemocentro.id }}</td>
+          <td>{{ hemocentro.nome }}</td>
+          <td>{{ hemocentro.status }}</td>
+          <td>{{ hemocentro.email }}</td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-outline-warning mb-1 btn-sm">
+                <!-- Pendendo botão atualizar -->
+                Atualizar
+              </button>
+              {{ '' }}
+              <button class="btn btn-outline-danger mb-1 btn-sm">
+                <!-- Pendente botão remover -->
+                Remover
+              </button>
+            </span>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <ng-template #loadingError>
+      <div *ngIf="error$ | async; else loading">
+        Erro ao carregar os Hemocentros. Tente novamente mais tarde.
+      </div>
+      <ng-template #loading>
+        <span>Carregando Hemocentros...</span>
+      </ng-template>
+    </ng-template>
+
+
+  </div>
+
+</div>

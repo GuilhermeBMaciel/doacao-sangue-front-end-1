@@ -1,3 +1,15 @@
+.box {
+ width: 14.25%;
+ top: 90px;
+ left: 0px;
+ height: 410px;/*Altura da linha*/
+ position: absolute;
+}
+
+.linha-vertical {
+ border: 4px solid #e67e22;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+ box-sizing: border-box;
+}
 body { 
 	background: #EEE; 
 	overflow-x:hidden;
@@ -18,7 +30,7 @@ body {
 .container {
     font-size: 20px;
     top: 50px;
-    left: 0px;
+    left: 20px;
     width: 200px;
     position: absolute;
     margin: 0px auto;
@@ -542,7 +554,6 @@ body {
 	}
 	
 }
-
 @media only screen and (max-width: 479px) {
     .mcd-menu { 
 		width: 50px;
@@ -610,10 +621,10 @@ body {
 		top: 35px;
 	}
 	.mcd-menu li ul a {
-		font-size:50px;
+		font-size:12px;
 	}
 	.mcd-menu li ul a i {
-		font-size:56px;
+		font-size:14px;
 	}
     
 }
